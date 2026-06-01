@@ -45,7 +45,6 @@ function showToast(message) {
     }, 1800);
 }
 
-// Screen Switcher (এটাই মূল সমস্যা ছিল)
 function switchScreen(screenName) {
     Object.keys(screens).forEach(key => {
         screens[key].classList.add('hidden');
@@ -61,7 +60,6 @@ function switchScreen(screenName) {
         activeScreen.style.transform = 'translateY(0)';
     }, 30);
 
-    // Bottom Nav Active State
     navItems.forEach(btn => {
         const isTarget = btn.dataset.screen === screenName;
         const pill = document.getElementById(`nav-pill-${btn.dataset.screen}`);
@@ -93,11 +91,21 @@ navItems.forEach(item => {
     });
 });
 
-// Render Gallery, Favorites, etc. (বাকি সব ফাংশন)
+// Render Gallery with Multiple Categories
 function renderGallery() {
     filteredImages = images.filter(img => {
-        const matchesCategory = (currentFilter === 'all' || img.category === currentFilter);
         const matchesSearch = img.caption.toLowerCase().includes(searchQuery.toLowerCase());
+        
+        let matchesCategory = true;
+        
+        if (currentFilter !== 'all') {
+            if (img.categories && Array.isArray(img.categories)) {
+                matchesCategory = img.categories.includes(currentFilter);
+            } else if (img.category) {
+                matchesCategory = img.category === currentFilter;
+            }
+        }
+
         return matchesCategory && matchesSearch;
     });
 
@@ -122,7 +130,7 @@ function renderGallery() {
                 ${isLiked ? `<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/95 dark:bg-zinc-950/95 flex items-center justify-center shadow-md border border-slate-100/30"><i class="fa-solid fa-heart text-app-accent text-xs"></i></div>` : ''}
             </div>
             <div class="p-4 space-y-1.5">
-                <span class="text-[9px] font-black uppercase tracking-widest text-app-primary dark:text-app-primaryDark">${translateCategory(img.category)}</span>
+                <span class="text-[9px] font-black uppercase tracking-widest text-app-primary dark:text-app-primaryDark">${translateCategory(img.categories || [img.category])}</span>
                 <p class="text-xs font-bold text-slate-800 dark:text-zinc-200 leading-normal line-clamp-2">${img.caption}</p>
             </div>
         `;
@@ -189,7 +197,6 @@ function renderFavorites() {
     });
 }
 
-// Double Tap Like
 function triggerDoubleTapLike(img, itemElement) {
     if (!likedImages.includes(img.id)) {
         likedImages.push(img.id);
@@ -212,7 +219,6 @@ function triggerDoubleTapLike(img, itemElement) {
     }
 }
 
-// Remove Favorite
 window.removeFavoriteDirectly = function(e, id) {
     e.stopPropagation();
     likedImages = likedImages.filter(item => item !== id);
@@ -222,23 +228,33 @@ window.removeFavoriteDirectly = function(e, id) {
     renderGallery();
 };
 
-// Profile Stats
 function updateProfileStats() {
     document.getElementById('stat-total').textContent = images.length;
     document.getElementById('stat-liked').textContent = likedImages.length;
 }
 
-function translateCategory(cat) {
-    const categories = {
-        'travel': 'Travels',
-        'social': 'Family & Friends',
-        'moments': 'Special Moments',
-        'special': 'Special Moments'
+// Translate Category
+function translateCategory(categories) {
+    if (!categories || !Array.isArray(categories) || categories.length === 0) return 'Uncategorized';
+
+    const categoryMap = {
+        'dhaka': 'Dhaka',
+        'du': 'Dhaka University',
+        'dhaka-university-shahid-osman-hadi-hall': 'Shahid Osman Hadi Hall',
+        'dhaka-zia-park': 'Zia Park',
+        'jashore': 'Jashore',
+        'khulna': 'Khulna',
+        'rajshahi': 'Rajshahi',
+        'eid-special': 'Eid Special',
+        'my-college': 'My College',
+        'pleasure-time': 'Pleasure Time',
+        'moments': 'Special Moments'
     };
-    return categories[cat] || cat;
+
+    return categoryMap[categories[0]] || categories[0];
 }
 
-// Category Filter
+// Category Filter (Fixed)
 categoryTabs.addEventListener('click', (e) => {
     const target = e.target.closest('.category-btn');
     if (!target) return;
@@ -248,6 +264,7 @@ categoryTabs.addEventListener('click', (e) => {
     });
 
     target.className = "category-btn active px-5 py-3 rounded-app-lg text-xs font-bold tracking-wide transition-all duration-200 whitespace-nowrap bg-app-primary text-white shadow-md shadow-app-primary/20 active-scale";
+    
     currentFilter = target.dataset.category;
     renderGallery();
 });
@@ -285,7 +302,7 @@ function updateLightboxContent() {
     lightboxImg.src = currentImg.url;
     lightboxImg.alt = currentImg.caption;
     lightboxDesc.textContent = currentImg.caption;
-    lightboxBadge.textContent = translateCategory(currentImg.category);
+    lightboxBadge.textContent = translateCategory(currentImg.categories || [currentImg.category]);
     lightboxCounter.textContent = `${activeLightboxIndex + 1} / ${activeDataset.length}`;
 
     const heartIcon = lightboxFavBtn.querySelector('i');
@@ -314,7 +331,7 @@ function prevImage() {
     updateLightboxContent();
 }
 
-// Lightbox Event Listeners
+// Lightbox Listeners
 document.getElementById('lightbox-next').addEventListener('click', nextImage);
 document.getElementById('lightbox-prev').addEventListener('click', prevImage);
 document.getElementById('lightbox-close-btn').addEventListener('click', closeLightbox);
@@ -346,7 +363,7 @@ lightboxCopyBtn.addEventListener('click', () => {
     showToast("Direct URL copied to clipboard 🔗");
 });
 
-// Double Tap in Lightbox
+// Double Tap Lightbox
 let lightboxLastTap = 0;
 lightboxImg.addEventListener('touchstart', (e) => {
     const currentTime = new Date().getTime();
@@ -373,7 +390,7 @@ lightboxImg.addEventListener('touchstart', (e) => {
     lightboxLastTap = currentTime;
 }, { passive: false });
 
-// Keyboard Support
+// Keyboard
 document.addEventListener('keydown', (e) => {
     if (lightbox.classList.contains('hidden')) return;
     if (e.key === 'ArrowRight') nextImage();
@@ -381,7 +398,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
 });
 
-// Theme Management
+// Theme
 const themeToggleBtn = document.getElementById('theme-toggle');
 const autoDarkToggle = document.getElementById('auto-dark-toggle');
 
@@ -424,7 +441,7 @@ autoDarkToggle.addEventListener('change', () => {
     }
 });
 
-// Touch Swipe for Lightbox
+// Touch Swipe
 let touchstartX = 0;
 let touchendX = 0;
 
@@ -438,7 +455,7 @@ lightbox.addEventListener('touchend', e => {
     if (touchendX > touchstartX + 60) prevImage();
 }, { passive: true });
 
-// Initialize App
+// Initialize
 window.addEventListener('DOMContentLoaded', () => {
     initTheme();
     renderGallery();
