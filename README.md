@@ -1,15 +1,4 @@
-# Hi there 👋🏻, I'm Tabib Imran
-
-<p align="left">
-  <a href="https://inwithimran.vercel.app/">
-    <img src="https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  <a href="https://www.linkedin.com/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-</p>
-
----
+# Hi there, I'm Tabib Imran 👋
 
 ### 🚀 About Me
 I am a dedicated **Frontend Web Developer** passionate about creating clean, responsive, and user-friendly web applications. I focus on writing structured code and building seamless digital experiences.
@@ -17,26 +6,6 @@ I am a dedicated **Frontend Web Developer** passionate about creating clean, res
 - 💻 Specialized in building responsive UI and single-page applications.
 - 🛠️ Currently exploring advanced frontend patterns and performance optimization.
 - 🎯 Goal is to deliver high-quality, impactful web solutions.
-
----
-
-### 🌐 Connect with Me
-Let's connect and share ideas! You can find me across these platforms:
-
-<p align="left">
-  <a href="https://www.linkedin.com/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://www.youtube.com/">
-    <img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
-  </a>
-  <a href="https://www.facebook.com/">
-    <img src="https://img.shields.io/badge/Facebook-1877F2?style=flat-for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
-  </a>
-  <a href="mailto:your.email@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=flat-for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-</p>
 
 ---
 
@@ -58,4 +27,26 @@ Let's connect and share ideas! You can find me across these platforms:
 
 ---
 
-💬 **Feel free to reach out for collaborations or just a tech chat!**
+### 🌐 Connect with Me
+Let's connect and share ideas! Feel free to reach out through any of these platforms:
+
+<p align="left">
+  <a href="https://inwithimran.vercel.app/">
+    <img src="https://img.shields.io/badge/My_Portfolio-000000?style=flat-for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  </a>
+  <a href="https://www.linkedin.com/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://www.youtube.com/">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
+  </a>
+  <a href="https://www.facebook.com/">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=flat-for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
+  </a>
+  <a href="mailto:your.email@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=flat-for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+</p>
+
+---
+💬 *“Coding is not just about writing syntax, it's about solving real-world problems.”*
