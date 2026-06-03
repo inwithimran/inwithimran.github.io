@@ -1,7 +1,7 @@
 # Hi there 👋🏻, I'm Tabib Imran
 
 ### 🚀 About Me
-I am a dedicated **Frontend Web Developer** passionate about creating clean, responsive, and user-friendly web applications. I focus on writing structured code and building seamless digital experiences.
+I am a dedicated **Web Developer** passionate about creating clean, responsive, and user-friendly web applications, games and tools. I focus on writing structured code and building seamless digital experiences.
 
 - 💻 Specialized in building responsive UI and single-page applications.
 - 🛠️ Currently exploring advanced frontend patterns and performance optimization.
