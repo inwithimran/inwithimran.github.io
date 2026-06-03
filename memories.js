@@ -3,7 +3,7 @@
 const privateMemories = [
   { 
     id: 1, 
-    url: "pictures/1.png", 
+    url: "pictures/1.jpg", 
     caption: "আধুনিকতার ভিড়ে এক টুকরো অতীত। এই পুরোনো দেওয়ালগুলোর পরতে পরতে যেন লুকিয়ে আছে আভিজাত্য।", 
     categories: ["dhaka"] 
   },
@@ -21,19 +21,19 @@ const privateMemories = [
   },
   { 
     id: 4, 
-    url: "pictures/4.png", 
+    url: "pictures/4.jpg", 
     caption: "সবুজে ঘেরা ক্যাম্পাস আর এক বুক প্রশান্তি। খুলনা বিশ্ববিদ্যালয়ের এই চত্বরে দাঁড়িয়ে থমকে যাক কিছুটা সময়। 🌿", 
     categories: ["khulna"] 
   },
   { 
     id: 5, 
-    url: "pictures/5.png", 
+    url: "pictures/5.jpg", 
     caption: "কোলাহল থেকে দূরে, ঈদের দিনটা একটু নিজের মতো করে। ছাদে বসে আকাশ দেখার আনন্দই আলাদা। ❤️", 
     categories: ["eid-special"] 
   },
   { 
     id: 6, 
-    url: "pictures/6.jpg", 
+    url: "pictures/6.png", 
     caption: "কোলাহল থামিয়ে শহর যখন শান্ত, তখন এক জায়গায় বসে রাত দেখার আনন্দই আলাদা। যশোরের এই রাতগুলো বড্ড প্রিয়। 🏙️❤️", 
     categories: ["jashore"] 
   },
@@ -57,19 +57,19 @@ const privateMemories = [
   },
   { 
     id: 10, 
-    url: "pictures/10.jpg", 
+    url: "pictures/10.png", 
     caption: "কলেজের শহীদ মিনারে বসে আছি, যেন আমিই এই ক্যাম্পাসের একমাত্র ভিআইপি গেস্ট! 😎🔥", 
     categories: ["my-college"] 
   },
   { 
     id: 11, 
-    url: "pictures/11.png", 
+    url: "pictures/11.jpg", 
     caption: "কোনো গন্তব্য নেই, জাস্ট নিজের মুড আর স্টাইল নিয়ে রাস্তায় নামা। কারণ, নিজের ভাইবটাই আসল। 😏", 
     categories: ["pleasure-time"] 
   },
   { 
     id: 12, 
-    url: "pictures/12.jpg", 
+    url: "pictures/12.png", 
     caption: "মাঠে প্লেয়ার থাকুক আর না থাকুক, গ্যালারিতে বসে আমাদের এই লুকটাই কিন্তু পুরো স্টেডিয়াম কাঁপানোর জন্য যথেষ্ট! 😎🚀", 
     categories: ["rajshahi"] 
   },
@@ -81,7 +81,7 @@ const privateMemories = [
   },
   { 
     id: 14, 
-    url: "pictures/14.jpg", 
+    url: "pictures/14.png", 
     caption: "চেনা পরিবেশের মাঝে এক টুকরো প্রশান্তি। শহীদ মিনারে দাঁড়িয়ে কাটানো একটি সুন্দর বিকেল। 🌿", 
     categories: ["pleasure-time"] 
   },
