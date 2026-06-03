@@ -7,6 +7,9 @@ let activeLightboxIndex = 0;
 let filteredImages = [];
 let activeDataset = [];
 
+// Sort images by newest first (highest ID first)
+images.sort((a, b) => b.id - a.id);
+
 // UI Elements
 const galleryGrid = document.getElementById('gallery-grid');
 const favGrid = document.getElementById('fav-grid');
@@ -109,6 +112,9 @@ function renderGallery() {
         return matchesCategory && matchesSearch;
     });
 
+    // Ensure newest images appear first
+    filteredImages.sort((a, b) => b.id - a.id);
+
     if (filteredImages.length === 0) {
         galleryGrid.classList.add('hidden');
         noResults.classList.remove('hidden');
@@ -158,8 +164,11 @@ function renderGallery() {
 
 // Render Favorites
 function renderFavorites() {
-    const favoriteList = images.filter(img => likedImages.includes(img.id));
+    let favoriteList = images.filter(img => likedImages.includes(img.id));
     document.getElementById('fav-count').textContent = `${favoriteList.length} total`;
+
+    // Ensure newest favorites appear first
+    favoriteList.sort((a, b) => b.id - a.id);
 
     if (favoriteList.length === 0) {
         favGrid.classList.add('hidden');
@@ -254,7 +263,7 @@ function translateCategory(categories) {
     return categoryMap[categories[0]] || categories[0];
 }
 
-// Category Filter (Fixed)
+// Category Filter
 categoryTabs.addEventListener('click', (e) => {
     const target = e.target.closest('.category-btn');
     if (!target) return;
