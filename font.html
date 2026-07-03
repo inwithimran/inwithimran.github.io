@@ -1,0 +1,179 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফাইল ডাউনলোড সেন্টার</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Bengali (Hind Siliguri) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        }
+        .glassmorphism {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-100 flex flex-col justify-between p-4 md:p-8">
+
+    <!-- Header Section -->
+    <header class="w-full max-w-4xl mx-auto flex justify-between items-center py-4 border-b border-slate-800">
+        <div class="flex items-center space-x-2">
+            <!-- Cloud Icon SVG -->
+            <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+            </svg>
+            <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">মেঘডাউনলোড</span>
+        </div>
+        <div class="text-sm text-slate-400 hidden sm:block">Free Bangla OMR font Download</div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="w-full max-w-lg mx-auto my-auto py-8">
+        <div class="glassmorphism rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+            
+            <!-- Glow effect -->
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-600 rounded-full blur-3xl opacity-30"></div>
+            <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-cyan-600 rounded-full blur-3xl opacity-30"></div>
+
+            <!-- File Icon and Title -->
+            <div class="flex flex-col items-center text-center mb-6">
+                <div class="w-16 h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center mb-4 border border-indigo-500/20">
+                    <!-- Zip File Icon -->
+                    <svg class="w-10 h-10 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold text-white mb-2 leading-snug">BanglaOMR.ttf</h1>
+                <p class="text-xs text-slate-400">আপলোড করা হয়েছে: ৩ জুলাই, ২০২৬</p>
+            </div>
+
+            <!-- File Details Table -->
+            <div class="space-y-3 mb-8 bg-slate-900/50 rounded-2xl p-4 border border-slate-800/60">
+                <div class="flex justify-between items-center text-sm py-1">
+                    <span class="text-slate-400">ফাইলের সাইজ:</span>
+                    <span class="font-semibold text-slate-200">83.62 kB</span>
+                </div>
+                <div class="border-t border-slate-800/80 my-2"></div>
+                <div class="flex justify-between items-center text-sm py-1">
+                    <span class="text-slate-400">ফাইলের ধরন:</span>
+                    <span class="font-semibold text-slate-200">ttf</span>
+                </div>
+                <div class="border-t border-slate-800/80 my-2"></div>
+                <div class="flex justify-between items-center text-sm py-1">
+                    <span class="text-slate-400">মোট ডাউনলোড:</span>
+                    <span class="font-semibold text-indigo-400">১২,৫৪০ বার</span>
+                </div>
+                <div class="border-t border-slate-800/80 my-2"></div>
+                <div class="flex justify-between items-center text-sm py-1">
+                    <span class="text-slate-400">নিরাপত্তা স্ট্যাটাস:</span>
+                    <span class="flex items-center text-emerald-400 font-medium">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        ভাইরাস মুক্ত
+                    </span>
+                </div>
+            </div>
+
+            <!-- Download Button & Timer Area -->
+            <div class="space-y-4">
+                <!-- Initial Download Trigger Button -->
+                <button id="start-btn" onclick="startTimer()" class="w-full bg-gradient-to-r from-indigo-500 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 text-white font-bold py-4 px-6 rounded-2xl shadow-lg transition duration-300 transform active:scale-95 flex items-center justify-center space-x-2">
+                    <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    <span>ডাউনলোড লিংক তৈরি করুন</span>
+                </button>
+
+                <!-- Timer Spinner View (Hidden initially) -->
+                <div id="timer-box" class="hidden flex flex-col items-center justify-center space-y-3 bg-slate-900/40 p-6 rounded-2xl border border-slate-800">
+                    <div class="relative w-16 h-16 flex items-center justify-center">
+                        <div class="animate-spin rounded-full h-12 w-12 border-4 border-indigo-500 border-t-transparent"></div>
+                        <span id="countdown" class="absolute font-bold text-lg text-white">১০</span>
+                    </div>
+                    <p class="text-sm text-slate-300">দয়া করে কয়েক সেকেন্ড অপেক্ষা করুন...</p>
+                </div>
+
+                <!-- Final Download Link (Hidden initially) -->
+                <a id="download-link" href="#" onclick="triggerRealDownload(event)" class="hidden w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold py-4 px-6 rounded-2xl text-center shadow-lg transition duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>ফাইলটি ডাউনলোড করতে এখানে ক্লিক করুন</span>
+                </a>
+            </div>
+
+            <!-- Custom Notification Message Box -->
+            <div id="success-alert" class="hidden mt-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-center">
+                <span class="text-sm text-emerald-400 font-medium">🎉 আপনার ফাইলটি ডাউনলোড হওয়া শুরু হয়েছে!</span>
+            </div>
+
+        </div>
+
+        <!-- Ad/Info Slot -->
+        <div class="mt-6 text-center text-xs text-slate-500">
+            ডাউনলোডে কোনো সমস্যা হলে অনুগ্রহ করে আমাদের পেজে মেসেজ করুন।
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="w-full text-center py-6 text-xs text-slate-500 border-t border-slate-900">
+        <p>&copy; ২০২৬ মেঘডাউনলোড পোর্টাল। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <!-- JavaScript For Interactivity -->
+    <script>
+        function startTimer() {
+            const startBtn = document.getElementById('start-btn');
+            const timerBox = document.getElementById('timer-box');
+            const countdownEl = document.getElementById('countdown');
+            const downloadLink = document.getElementById('download-link');
+
+            // Hide the start button and show the countdown UI
+            startBtn.classList.add('hidden');
+            timerBox.classList.remove('hidden');
+
+            let timeLeft = 10; // 10-second countdown
+            countdownEl.textContent = timeLeft;
+
+            const timer = setInterval(() => {
+                timeLeft--;
+                countdownEl.textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    // Hide timer box and show real download button
+                    timerBox.classList.add('hidden');
+                    downloadLink.classList.remove('hidden');
+                }
+            }, 1000);
+        }
+
+        function triggerRealDownload(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('success-alert');
+            
+            // Show custom success alert
+            alertBox.classList.remove('hidden');
+
+            // Simulate file download trigger (replacing alert)
+            // Real implementation would set href to the actual file location
+            setTimeout(() => {
+                // mock downloading behavior
+                alert('ফাইল ডাউনলোড সফলভাবে শুরু হয়েছে!');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
+
+```
